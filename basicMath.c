@@ -1,5 +1,6 @@
 #include "myMath.h"
 
+// add a to y --> return x-y
 float add(float x , float y)
 {
       float k;
@@ -7,7 +8,7 @@ float add(float x , float y)
       k=x+y;
       return k;
 }
-
+// sub x to y -->return x-y 
 float sub(float x , float y)
 {
       float k;
@@ -16,6 +17,7 @@ float sub(float x , float y)
       return k;
 
 }
+// mul x to y and return k --> x*y = k 
 double mul(double x , int y)
 {
       double k;
@@ -24,7 +26,7 @@ double mul(double x , int y)
       return k;
 
 }
-
+// div x with y --> return x/y
 double div(double x , int y)
 {
       double k;
