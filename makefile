@@ -1,6 +1,5 @@
 CC=gcc
 AR=ar
-OBJECTS_MAIN=main.o
 FLAGS=-Wall -g
 
 all: mymaths mymathd libmyMath.so libmyMath.a mains maind
@@ -23,7 +22,6 @@ power.o: power.c myMath.h
 main.o: main.c myMath.h  
 	$(CC) $(FLAGS) -c main.c -o main.o
 
-.PHONY: clean all
 
 clean:
 	rm -f *.o *.a *.so mymaths mymathd
