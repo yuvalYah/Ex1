@@ -3,15 +3,15 @@ AR=ar
 OBJECTS_MAIN=main.o
 FLAGS=-Wall -g
 
-all: mymaths mymathd libmyMath.so libmyMath.a	
+all: mymaths mymathd libmyMath.so libmyMath.a mains maind
 mymaths: libmyMath.a main.o
 	$(CC) $(FLAGS) -o mymaths main.o libmyMath.a
 mymathd: libmyMath.so main.o
 	$(CC) $(FLAGS) -o mymathd main.o ./libmyMath.so
-mains: mymaths main.o
-	$(CC) $(FLAGS) main.o mymaths -o main
-maind: mymathd main.o
-	$(CC) $(FLAGS) main.o mymathd -o main
+mains: libmyMath.a main.o
+	$(CC) $(FLAGS) main.o libmyMath.a -o mains
+maind: libmyMath.so main.o
+	$(CC) $(FLAGS) main.o ./libmyMath.so -o maind
 libmyMath.so: power.o basicMath.o
 	$(CC) -shared -o libmyMath.so power.o basicMath.o
 libmyMath.a: power.o basicMath.o
